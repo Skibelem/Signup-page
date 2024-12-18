@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/output.css">
+    <title>Document</title>
+</head>
+<body class="overflow-hidden">
+    <div class="bg-[#0B022F] w-[screen] hidden max-sm:block text-center py-5">
+        <h2 class="text-[#F8FAFC] text-2xl font-bold">
+            KIATKEA
+        </h2>
+    </div>
+    <div class="grid grid-cols-3">
+        <div class="h-screen bg-[#0B022F] w-[fit] col-span-1 max-sm:hidden">
+            <img src="assets/LOGIN.png" alt="" class="m-auto pt-52">
+        </div>
+        <div class="font-body col-span-2">
+            <div class="flex justify-center max-sm:hidden">
+                <h2 class="text-[50px] font-semibold font-body">
+                    LogIn
+                </h2>
+            </div>
+            
+            <div class="p-5 max-sm:w-screen">
+                <div class="hidden max-sm:block">
+                    <h2 class="text-[50px] font-semibold font-body">
+                        Login
+                    </h2>
+                </div>
+                <div class="bg-[#e7dede] h-[500px] p-4 rounded-[8px] max-sm:h-[530px]">
+                    <form action="" id="sign-in-form">
+                        <div>
+                            <label for="email">Email</label>
+                            <input type="email" placeholder="abcd@gmail.com" required  name="email" id="email" class="rounded-[8px] w-[100%] p-1 border-primary border-solid border-[1px] mb-[24px]">
+
+                            <label for="password">Password</label>
+                            <input  type="password" 
+                            id="password" 
+                            name="password" 
+                            autocomplete="new-password" 
+                            autofocus 
+                            required 
+                            minlength="8" 
+                            maxlength="128" 
+                            placeholder="Enter your password" 
+                            title="Password must be at least 8 characters" class="rounded-[8px] p-1 w-[100%] border-primary border-solid border-[1px] mb-[24px]">
+                        </div>
+                        <div class="mb-[24px] flex justify-center">
+                            <button class="bg-[#0B022F] w-[70%] h-fit rounded-[40px] text-[#F8FAFC] p-2 text-center">SignIn</button>
+                        </div>
+                        <div class="flex justify-center items-center m-auto bg-[#F8FAFC] rounded-[40px] w-[80%] p-2 border-[1px] border-solid border-primary mb-[24px]">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="25" viewBox="0 0 46 47" fill="none">
+                                    <path d="M41.7938 19.7462H40.2499V19.6666H22.9999V27.3333H33.832C32.2517 31.7963 28.0053 35 22.9999 35C16.649 35 11.4999 29.8509 11.4999 23.5C11.4999 17.1491 16.649 12 22.9999 12C25.9315 12 28.5985 13.1059 30.6292 14.9124L36.0505 9.49106C32.6273 6.30077 28.0484 4.33331 22.9999 4.33331C12.4151 4.33331 3.83325 12.9152 3.83325 23.5C3.83325 34.0848 12.4151 42.6666 22.9999 42.6666C33.5847 42.6666 42.1666 34.0848 42.1666 23.5C42.1666 22.2149 42.0343 20.9604 41.7938 19.7462Z" fill="#FBC02D"/>
+                                    <path d="M6.04321 14.5789L12.3404 19.1971C14.0443 14.9785 18.1709 12 23 12C25.9315 12 28.5985 13.1059 30.6293 14.9124L36.0505 9.49106C32.6274 6.30077 28.0485 4.33331 23 4.33331C15.638 4.33331 9.25363 8.4896 6.04321 14.5789Z" fill="#E53935"/>
+                                    <path d="M22.9999 42.6667C27.9506 42.6667 32.4491 40.772 35.8502 37.691L29.9181 32.6712C27.9938 34.1289 25.6018 35 22.9999 35C18.0146 35 13.7817 31.8212 12.187 27.3851L5.93677 32.2007C9.10885 38.4078 15.5508 42.6667 22.9999 42.6667Z" fill="#4CAF50"/>
+                                    <path d="M41.7939 19.7462L41.7785 19.6667H40.25H23V27.3334H33.832C33.073 29.4771 31.694 31.3258 29.9153 32.6722C29.9163 32.6713 29.9173 32.6713 29.9182 32.6703L35.8503 37.6901C35.4305 38.0715 42.1667 33.0834 42.1667 23.5C42.1667 22.2149 42.0344 20.9604 41.7939 19.7462Z" fill="#1565C0"/>
+                                </svg>
+                            </div>
+                            <p class="text-[#0B022F] "><a href="index4.html" onclick="handleSignInClick()">Sign in with Google</a></p>
+                        </div>
+                    </form>
+                    <div class="text-center gap-[10px]">
+                        <p class="text-[16px] mb-[34px]">
+                           <a href="index.html"> Register an account</a>
+                        </p>
+                        <p>
+                            <a href="index4.html">Forgot Password</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const signUpForm = document.getElementById('sign-in-form');
+
+        signUpForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Validate form fields
+            if (!email || !password) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            // Redirect to login page
+             window.location.href = 'index4.html';
+        });
+    </script>
+
+    <!-- google authentication -->
+    <script>
+        function handleSignInClick() {
+          gapi.auth2.authorize({
+            client_id: 'YOUR_CLIENT_ID',
+            scope: 'email profile',
+            response_type: 'token id_token'
+          }, handleSignInResponse);
+        }
+      
+        function handleSignInResponse(authResult) {
+          if (authResult.code) {
+            // Send the code to the server to exchange for an access token
+            // ...
+          } else {
+            // User cancelled or error
+            // ...
+          }
+        }
+      </script>
+</body>
+</html>

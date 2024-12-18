@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <!-- npx tailwindcss -i ./src/input.css -o ./src/output.css --watch -->
+    <title>Upload Image</title>
+    <style>
+        /* Add your CSS styles here */
+        .hidden {
+            display: none;
+        }
+        .visible {
+            display: block;
+        }
+
+        #uploadText {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            word-break: break-word;
+            white-space: normal;
+        }
+    </style>
+</head>
+<body class="overflow-hidden">
+    <div class="bg-[#0B022F] max-sm:block lg:hidden">
+        <img src="assets/Get started (1).png" alt="" class="pt-[26px] pb-[29px] mx-auto">
+    </div>
+    <div class="">
+        <div class="h-screen bg-[#0B022F] w-[300px] max-sm:hidden fixed">
+            <img src="assets/Get started.png" alt="" class="m-auto pt-44">
+        </div>
+        
+        <div class="font-body  ml-[400px] max-sm:m-0">
+            <div class="float-right lg:hidden max-sm:block w-[134.425px] p-3 ">
+                <img src="/assets/upoload small.png" alt="" class="mt-3">
+            </div>
+            <div class=" ml-24 flex">
+                <div class="mt-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" class="pb-0 m-0 border-[1px] border-solid border-primary rounded-full max-sm:hidden">
+                        <path d="M18.6654 7L9.4987 16.1667L5.33203 12" stroke="#0B022F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <div class="w-[200px] float-right max-sm:hidden ml-52">
+                    <svg width="200" height="50" viewBox="0 0 283 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" fill="white"/>
+                        <rect x="0.5" y="0.5" width="49" height="49" rx="24.5" stroke="#0B022F"/>
+                        <path d="M27.6637 18.9091V32H25.2923V21.2166H25.2156L22.1538 23.1726V20.9993L25.4073 18.9091H27.6637Z" fill="#0B022F"/>
+                        <line x1="50" y1="24.1" x2="116.5" y2="24.1" stroke="#0B022F" stroke-width="1.8"/>
+                        <rect x="117" y="0.5" width="49" height="49" rx="24.5" fill="white"/>
+                        <rect x="117" y="0.5" width="49" height="49" rx="24.5" stroke="#0B022F"/>
+                        <path d="M137.574 32V30.2869L142.118 25.8317C142.553 25.3928 142.915 25.0028 143.205 24.6619C143.495 24.321 143.712 23.9908 143.857 23.6712C144.002 23.3516 144.074 23.0107 144.074 22.6484C144.074 22.2351 143.98 21.8814 143.793 21.5874C143.605 21.2891 143.348 21.0589 143.02 20.897C142.691 20.7351 142.319 20.6541 141.901 20.6541C141.471 20.6541 141.093 20.7436 140.77 20.9226C140.446 21.0973 140.194 21.3466 140.015 21.6705C139.841 21.9943 139.753 22.38 139.753 22.8274H137.497C137.497 21.9964 137.686 21.2741 138.066 20.6605C138.445 20.0469 138.967 19.5717 139.632 19.2351C140.301 18.8984 141.068 18.7301 141.933 18.7301C142.811 18.7301 143.582 18.8942 144.247 19.2223C144.912 19.5504 145.427 20 145.794 20.571C146.164 21.142 146.35 21.794 146.35 22.527C146.35 23.017 146.256 23.4986 146.069 23.9716C145.881 24.4446 145.551 24.9687 145.078 25.544C144.609 26.1193 143.951 26.8161 143.103 27.6342L140.846 29.929V30.0185H146.548V32H137.574Z" fill="#0B022F"/>
+                        <line x1="166.5" y1="24.1" x2="233" y2="24.1" stroke="#0B022F" stroke-width="1.8"/>
+                        <rect x="233.5" y="0.5" width="49" height="49" rx="24.5" fill="#0B022F"/>
+                        <rect x="233.5" y="0.5" width="49" height="49" rx="24.5" stroke="#0B022F"/>
+                        <path d="M258.499 32.179C257.579 32.179 256.761 32.0213 256.045 31.706C255.333 31.3906 254.771 30.9517 254.357 30.3892C253.944 29.8267 253.724 29.1768 253.699 28.4396H256.102C256.123 28.7933 256.241 29.1023 256.454 29.3665C256.667 29.6264 256.95 29.8288 257.304 29.9737C257.658 30.1186 258.054 30.1911 258.493 30.1911C258.962 30.1911 259.377 30.1101 259.739 29.9482C260.101 29.782 260.385 29.5518 260.589 29.2578C260.794 28.9638 260.894 28.625 260.89 28.2415C260.894 27.8452 260.792 27.4957 260.583 27.1932C260.374 26.8906 260.072 26.6541 259.675 26.4837C259.283 26.3132 258.81 26.228 258.256 26.228H257.099V24.3999H258.256C258.712 24.3999 259.111 24.321 259.452 24.1634C259.797 24.0057 260.067 23.7841 260.263 23.4986C260.459 23.2088 260.555 22.8743 260.551 22.495C260.555 22.1243 260.472 21.8026 260.302 21.5298C260.136 21.2528 259.899 21.0376 259.592 20.8842C259.29 20.7308 258.934 20.6541 258.525 20.6541C258.124 20.6541 257.753 20.7266 257.413 20.8714C257.072 21.0163 256.797 21.223 256.588 21.4915C256.379 21.7557 256.268 22.071 256.256 22.4375H253.974C253.991 21.7045 254.202 21.0611 254.606 20.5071C255.016 19.9489 255.561 19.5142 256.243 19.2031C256.925 18.8878 257.69 18.7301 258.538 18.7301C259.411 18.7301 260.17 18.8942 260.813 19.2223C261.461 19.5462 261.962 19.983 262.315 20.5327C262.669 21.0824 262.846 21.6896 262.846 22.3544C262.85 23.0916 262.633 23.7095 262.194 24.2081C261.759 24.7067 261.188 25.0327 260.481 25.1861V25.2884C261.401 25.4162 262.106 25.7571 262.597 26.3111C263.091 26.8608 263.336 27.5447 263.332 28.3629C263.332 29.0959 263.123 29.7521 262.705 30.3317C262.292 30.907 261.721 31.3587 260.992 31.6868C260.268 32.0149 259.437 32.179 258.499 32.179Z" fill="white"/>
+                    </svg>                        
+                </div>
+            </div>
+            <div class="mt-6 max-sm:mt-10 p-5 max-sm:p-0">
+                <div class="font-semibold text-[36px] text-body max-sm:p-2">
+                    <p>Upload</p>
+                </div>
+                <div class="bg-[#e7dede] h-fit rounded-[8px] w-[500px] max-sm:w-screen">
+                    <div class="p-3">
+                        <div class="flex mb-8" id="upload">
+                            <div class="">
+                                <svg width="166" height="164" viewBox="0 0 166 164" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <ellipse id="Logo" cx="83" cy="82" rx="82.5" ry="82" fill="#130060"/>
+                                </svg>
+                            </div>
+                            <div class="mt-10 absolute ml-[53px]">
+                                <div class="cursor-pointer w-[54.965px] h-[54.965px]" type="file" onclick="upload()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="58" height="58" viewBox="0 0 58 58" fill="none">
+                                        <path d="M13.1685 12.0369L14.3915 5.91925C14.6406 4.67276 15.3141 3.55116 16.2973 2.7454C17.2804 1.93965 18.5124 1.49956 19.7836 1.50006H38.2518C39.523 1.49956 40.755 1.93965 41.7381 2.7454C42.7213 3.55116 43.3948 4.67276 43.6439 5.91925L44.8669 12.0369C45.0589 12.9954 45.519 13.8798 46.1938 14.5872C46.8685 15.2946 47.7303 15.7959 48.6787 16.0328C50.913 16.5918 52.8964 17.8815 54.3136 19.6971C55.7308 21.5126 56.5005 23.7498 56.5002 26.053V45.4721C56.5002 48.3877 55.3421 51.1838 53.2805 53.2454C51.2189 55.307 48.4228 56.4651 45.5072 56.4651H12.5282C9.61264 56.4651 6.81653 55.307 4.75494 53.2454C2.69335 51.1838 1.53516 48.3877 1.53516 45.4721V26.053C1.53495 23.7498 2.3046 21.5126 3.72179 19.6971C5.13897 17.8815 7.12236 16.5918 9.35669 16.0328C10.3051 15.7959 11.1669 15.2946 11.8416 14.5872C12.5164 13.8798 12.9765 12.9954 13.1685 12.0369V12.0369Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M29.0174 45.4721C35.0887 45.4721 40.0105 40.5503 40.0105 34.479C40.0105 28.4078 35.0887 23.486 29.0174 23.486C22.9462 23.486 18.0244 28.4078 18.0244 34.479C18.0244 40.5503 22.9462 45.4721 29.0174 45.4721Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d=    "M26.2695 12.493H31.766" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <p class="text-base text-center text-[#F8FAFC]">Upload</p>
+                                </div>
+                            </div>
+                            <div class="mt-[70px] ml-[30px] max-sm:text-sm">
+                                <p id="uploadText" style="overflow-wrap: break-word; word-wrap: break-word; word-break: break-word; white-space: normal;">Kindly upload your facial picture</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-end">
+                            <button class=" max-sm:w-full bg-[#CA2222] text-[#F8FAFC] font-bold rounded-[8px] py-2 px-4" id="nextButton" disabled>
+                                Next
+                            </button>
+                        </div>
+                        <!-- <div class="mt-3">
+                            <button class="max-sm:block sm:block hidden bg-[#CA2222] text-[#F8FAFC] font-bold p-3 w-full rounded-[8px]" id="nextButtonMobile" disabled>
+                                Next
+                            </button>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script>
+        function createInput() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/jpeg, image/png';
+            return input;
+        }
+    
+        function handleFileChange(event) {
+            const file = event.target.files[0];
+            const uploadText = document.getElementById('uploadText');
+            const nextButton = document.getElementById('nextButton');
+            const nextButtonMobile = document.getElementById('nextButtonMobile');
+    
+            if (file) {
+                console.log(`File selected: ${file.name}`);
+                uploadText.innerText = `File selected: ${file.name}`;
+                nextButton.disabled = false;
+                nextButtonMobile.disabled = false;
+            } else {
+                uploadText.innerText = 'No file selected';
+                nextButton.disabled = true;
+                nextButtonMobile.disabled = true;
+            }
+        }
+    
+        function upload() {
+            const input = createInput();
+            input.click();
+            input.addEventListener('change', handleFileChange);
+        }
+    
+        document.getElementById('nextButton').addEventListener('click', () => {
+            history.pushState({}, '', 'index3.html');
+        });
+    
+        document.getElementById('nextButtonMobile').addEventListener('click', () => {
+            history.pushState({}, '', 'index3.html');
+        });
+    </script> -->
+    <script>
+        // Create an input element to upload files
+        function createInput() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/jpeg, image/png'; // Accept only JPEG and PNG formats
+            return input;
+        }
+    
+        // Handle file selection and validation
+        function handleFileChange(event) {
+            const file = event.target.files[0];  // Get the first file (if any)
+            const uploadText = document.getElementById('uploadText'); // Update text on UI
+            const nextButton = document.getElementById('nextButton'); // Desktop next button
+            const nextButtonMobile = document.getElementById('nextButtonMobile'); // Mobile next button
+    
+            // Define maximum file size (5MB)
+            const maxFileSize = 5 * 1024 * 1024; // 5MB in bytes
+    
+            if (file) {
+                // Check if file type is valid
+                const validFileTypes = ['image/jpeg', 'image/png'];
+                if (!validFileTypes.includes(file.type)) {
+                    uploadText.innerText = 'Invalid file type. Only JPEG and PNG allowed.';
+                    nextButton.disabled = true;
+                    nextButtonMobile.disabled = true;
+                    return;
+                }
+    
+                // Check if file size is under the limit
+                if (file.size > maxFileSize) {
+                    uploadText.innerText = `File size exceeds 5MB limit. Please upload a smaller file.`;
+                    nextButton.disabled = true;
+                    nextButtonMobile.disabled = true;
+                    return;
+                }
+    
+                // If the file is valid
+                console.log(`File selected: ${file.name}`);
+                uploadText.innerText = `File selected: ${file.name}`;
+                nextButton.disabled = false;
+                nextButtonMobile.disabled = false;
+            } else {
+                uploadText.innerText = 'No file selected';
+                nextButton.disabled = true;
+                nextButtonMobile.disabled = true;
+            }
+        }
+    
+        // Trigger the file upload dialog
+        function upload() {
+            const input = createInput();
+            input.click();
+            input.addEventListener('change', handleFileChange); // Handle the file input change event
+        }
+    
+        // Navigation when 'Next' is clicked
+        document.getElementById('nextButton').addEventListener('click', () => {
+            window.location.href = 'index3.html'; // Navigate to index3.html (actual page loading)
+        });
+    
+        document.getElementById('nextButtonMobile').addEventListener('click', () => {
+            window.location.href = 'index3.html'; // Navigate to index3.html (actual page loading)
+        });
+    </script>
+    
+</body>
+</html>
